@@ -18,15 +18,14 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
-                sh 'npm run build'
+                sh 'docker build -t jenkins-practice .'
             }
         }
 
         stage('Run Docker Image') {
             steps {
-                sh 'docker build -t jenkins-practice .'
                 sh "docker run -d -p 3000:3000 jenkins-practice"
             }
         }

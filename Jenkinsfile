@@ -26,7 +26,7 @@ pipeline {
 
         stage('Run Docker Image') {
             steps {
-                sh "docker run -d -p 3000:3000 jenkins-practice"
+                sh "docker run -d -p 3001:3000 jenkins-practice"
             }
         }
 
